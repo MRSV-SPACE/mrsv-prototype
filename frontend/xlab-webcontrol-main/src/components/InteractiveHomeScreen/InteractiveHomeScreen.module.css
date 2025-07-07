@@ -1,0 +1,601 @@
+/* InteractiveHomeScreen.module.css */
+
+/* Base Styles */
+.interactiveHomeScreen {
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.homeView {
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Styles */
+.homeHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.homeHeader h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.homeHeader p {
+  font-size: 16px;
+  color: #718096;
+  margin: 0;
+}
+
+/* Icon Grid Layout */
+.iconGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .iconGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .iconGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Icon Item Styles */
+.iconItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: #2d3748;
+}
+
+.iconItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e0;
+}
+
+.iconItem:active {
+  transform: translateY(-2px);
+}
+
+.iconItem img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 12px;
+  object-fit: contain;
+}
+
+.iconItem span {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Selected Item Style */
+.iconItem.selected {
+  background-color: #edf2f7;
+  border: 1px solid #cbd5e0;
+}
+
+/* Focus State for Accessibility */
+.iconItem:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+/* Detail View Styles */
+.detailView {
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.detailHeader {
+  position: relative; /* Needed for absolute positioning of the button */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center children horizontally */
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  min-height: 56px; /* Ensures enough height for button and title */
+}
+
+.backButton {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #4299e1;
+  cursor: pointer;
+  margin-right: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.detailHeader h2 {
+  margin: 0 auto;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2d3748;
+  text-align: center;
+  flex: 0 1 auto;
+}
+
+.backButton:hover {
+  background-color: #ebf8ff;
+}
+
+.detailHeader h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+}
+
+.detailContent {
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px; 
+}
+
+.timeDialContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeDialWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Preset Buttons */
+.presetButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.presetBtn {
+  padding: 10px 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: white;
+  color: #2d3748;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.presetBtn:hover {
+  background-color: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+/* Favorites List */
+.favoritesList {
+  margin-top: 16px;
+}
+
+.favoriteItem {
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  background-color: #f7fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  color: #2d3748;
+}
+
+/* Settings Options */
+.settingsOptions {
+  margin-top: 16px;
+}
+
+.settingBtn {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: white;
+  color: #2d3748;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.settingBtn:hover {
+  background-color: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+/* More Options */
+.moreOptions {
+  margin-top: 16px;
+}
+
+.optionBtn {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: white;
+  color: #2d3748;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.optionBtn:hover {
+  background-color: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+/* Add this if you want to highlight the selected view */
+.iconItem[data-view="view"] {
+  background-color: #ebf8ff;
+  border-color: #90cdf4;
+}
+
+/* Section Headings */
+.sectionHeading {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+/* More Section Styles */
+.moreSection {
+  margin-top: 30px;
+  padding: 20px;
+  background: #FAFAFA;
+  border-radius: 16px;
+  border: 1px solid #E5E5E5;
+}
+
+.moreSectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.moreSectionHeader h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.customizeToggle {
+  background: #007AFF;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.customizeToggle:hover {
+  background: #005BBB;
+}
+
+.customButtonGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.customButtonContainer {
+  position: relative;
+}
+
+.customButton {
+  width: 100%;
+  height: 70px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.customButton.hasAction {
+  background: #F5F5F5;
+  color: #333;
+  border: 2px solid #E0E0E0;
+}
+
+.customButton.hasAction:hover {
+  background: #EEEEEE;
+  border-color: #CCCCCC;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.customButton.empty {
+  background: #F8F8F8;
+  color: #999;
+  border: 2px dashed #CCCCCC;
+}
+
+.customButton.empty:hover {
+  background: #F0F0F0;
+  border-color: #999;
+}
+
+.buttonContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.buttonIcon {
+  font-size: 20px;
+}
+
+.buttonText {
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.emptyContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plusIcon {
+  font-size: 24px;
+  color: #CCCCCC;
+}
+
+.removeButton {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FF3B30;
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+}
+
+.removeButton:hover {
+  background: #D70015;
+}
+
+.helpText {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Action Menu Styles */
+.actionMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.actionMenu {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 280px;
+  width: 90%;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.actionMenu h3 {
+  margin: 0 0 16px 0;
+  text-align: center;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.actionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.actionOption {
+  background: #F8F8F8;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 12px 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.actionOption:hover {
+  background: #F0F0F0;
+  border-color: #CCCCCC;
+  transform: translateY(-1px);
+}
+
+.actionIcon {
+  font-size: 18px;
+}
+
+.actionName {
+  font-size: 11px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+.cancelButton {
+  width: 100%;
+  background: #8E8E93;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cancelButton:hover {
+  background: #6D6D70;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .customButtonGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .customButton {
+    height: 60px;
+  }
+  
+  .buttonIcon {
+    font-size: 18px;
+  }
+  
+  .buttonText {
+    font-size: 9px;
+  }
+  
+  .actionGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .actionMenu {
+    width: 95%;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .moreSection {
+    margin-top: 20px;
+    padding: 16px;
+  }
+  
+  .moreSectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .customizeToggle {
+    align-self: flex-end;
+  }
+}
+
+/* Favorites */
+.favoritesContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.currentExperience {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.currentExperience h4 {
+  margin: 0 0 8px 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.currentExperience p {
+  margin: 0;
+  color: rgb(64, 52, 52);
+  font-weight: 500;
+}
+
+.favoritesList h4 {
+  margin: 0 0 12px 0;
+  color: #888;
+  font-size: 14px;
+}

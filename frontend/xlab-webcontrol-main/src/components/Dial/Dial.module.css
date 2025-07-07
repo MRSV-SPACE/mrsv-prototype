@@ -1,0 +1,102 @@
+.dialComponent {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+}
+
+/* SVG Dial */
+.dialSvg {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  touch-action: none;
+}
+
+/* Icon positioning within the dial */
+.dialIcon {
+  pointer-events: none;
+}
+
+/* Text container - positioned absolutely within the dial */
+.dialTextContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Inner text wrapper for precise positioning */
+.dialTextWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Icon spacer - creates space for the icon above */
+.dialIconSpacer {
+  height: 20%;
+}
+
+/* Percentage text styling */
+.dialPercentageText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 500;
+  color: #374151;
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  white-space: nowrap;
+  min-width: fit-content;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Responsive font sizing */
+.dialPercentageText.sizeSmall {
+  font-size: 10px;
+  padding: 2px 6px;
+}
+
+.dialPercentageText.sizeMedium {
+  font-size: 14px;
+  padding: 4px 8px;
+}
+
+.dialPercentageText.sizeLarge {
+  font-size: 18px;
+  padding: 6px 12px;
+}
+
+/* Hover effects */
+.dialComponent:hover .dialPercentageText {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Focus styles for accessibility */
+.dialSvg:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Optional: Different positioning for different dial sizes */
+@media (max-width: 768px) {
+  .dialComponent {
+    margin: 10px;
+  }
+  
+  .dialIconSpacer {
+    height: 25%;
+  }
+}

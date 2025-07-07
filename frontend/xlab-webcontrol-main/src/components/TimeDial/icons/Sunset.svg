@@ -1,0 +1,22 @@
+<svg width="51" height="35" viewBox="0 0 51 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_3837_181" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="12" y="0" width="26" height="26">
+<circle cx="25" cy="13" r="12" stroke="#FF5C00" stroke-width="2"/>
+</mask>
+<g mask="url(#mask0_3837_181)">
+<rect x="9" y="12" width="29" height="15" fill="#FC5618"/>
+<rect x="9" y="12" width="29" height="15" stroke="#FF5C00"/>
+</g>
+<rect x="0.5" y="11.5" width="50" height="1" rx="0.5" fill="#FC5618" stroke="#FF5C00"/>
+<rect x="20.5" y="0.5" width="9" height="1" rx="0.5" fill="#FC5618" stroke="#FF5C00"/>
+<rect x="14.5" y="4.5" width="7" height="1" rx="0.5" fill="#FC5618" stroke="#FF5C00"/>
+<rect x="23.5" y="4.5" width="12" height="1" rx="0.5" fill="#FC5618" stroke="#FF5C00"/>
+<rect x="12.5" y="8.5" width="18" height="1" rx="0.5" fill="#FC5618" stroke="#FF5C00"/>
+<rect x="32.5" y="8.5" width="5" height="1" rx="0.5" fill="#FC5618" stroke="#FF5C00"/>
+<rect x="4.90372" y="20.5856" width="6.94258" height="1" rx="0.5" transform="rotate(-25 4.90372 20.5856)" fill="#FC5618" stroke="#FF5C00"/>
+<rect x="9.21394" y="27.6836" width="6.94258" height="1" rx="0.5" transform="rotate(-45 9.21394 27.6836)" fill="#FC5618" stroke="#FF5C00"/>
+<rect x="16.6409" y="32.166" width="6.94258" height="1" rx="0.5" transform="rotate(-70 16.6409 32.166)" fill="#FC5618" stroke="#FF5C00"/>
+<rect x="24.5" y="34.4414" width="6.94258" height="1" rx="0.5" transform="rotate(-90 24.5 34.4414)" fill="#FC5618" stroke="#FF5C00"/>
+<rect x="33.0156" y="32.5076" width="6.94258" height="1" rx="0.5" transform="rotate(-110 33.0156 32.5076)" fill="#FC5618" stroke="#FF5C00"/>
+<rect x="40.3994" y="27.8827" width="6.94258" height="1" rx="0.5" transform="rotate(-135 40.3994 27.8827)" fill="#FC5618" stroke="#FF5C00"/>
+<rect x="45.4496" y="21.4371" width="6.94258" height="1" rx="0.5" transform="rotate(-155 45.4496 21.4371)" fill="#FC5618" stroke="#FF5C00"/>
+</svg>

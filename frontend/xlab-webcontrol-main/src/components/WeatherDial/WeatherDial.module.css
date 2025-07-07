@@ -1,0 +1,255 @@
+.weatherTheme {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  min-height: 100vh;
+  padding: 3rem;
+}
+
+.maxWidthWrapper {
+  max-width: 1024px; /* Tablet max width */
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.weatherLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  min-height: 60vh;
+}
+
+/* Weather buttons container - horizontal flow of columns */
+.weatherButtonsContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+.weatherColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  max-height: fit-content;
+}
+
+.weatherButton {
+  padding: 1.25rem;
+  border-radius: 50%;
+  border: 3px solid rgb(75, 85, 99);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(55, 65, 81);
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+}
+
+.weatherButton:hover {
+  background-color: rgb(75, 85, 99);
+  border-color: rgb(107, 114, 128);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.weatherButtonActive {
+  background-color: white;
+  border-color: white;
+  transform: scale(1.15);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
+}
+
+.weatherButtonIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weatherButtonIcon img,
+.weatherButtonIcon svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Dial container - always centered */
+.dialContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex: 1;
+  max-width: 250px;
+  width: 100%;
+}
+
+/* Weather-specific color classes */
+.yellow { 
+  color: #eab308; 
+}
+
+.blue { 
+  color: #2563eb; 
+}
+
+.gray { 
+  color: #6b7280; 
+}
+
+.purple { 
+  color: #7e22ce; 
+}
+
+.blueLight { 
+  color: #bfdbfe; 
+}
+
+.iconInactive { 
+  color: #d1d5db; 
+}
+
+/* Weather info text */
+.weatherInfo {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.weatherType {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+
+.weatherIntensity {
+  color: rgb(156, 163, 175);
+  font-size: 1rem;
+}
+
+.weatherInstructions {
+  text-align: center;
+  margin-top: 2rem;
+  color: rgb(156, 163, 175);
+  font-size: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tablet breakpoint - this becomes the standard layout for tablet+ */
+@media (min-width: 768px) {
+  
+  .weatherLayout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+  
+  .weatherButtonsContainer {
+    gap: 2.5rem;
+    flex-direction: row;
+  }
+  
+  .weatherColumn {
+    gap: 1.5rem;
+  }
+  
+  .dialContainer {
+    flex: none;
+    order: 2;
+  }
+  
+  .weatherButton {
+    width: 6rem;
+    height: 6rem;
+    padding: 1.5rem;
+  }
+  
+  .weatherButtonIcon {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* Desktop breakpoint - same as tablet, no changes */
+@media (min-width: 1024px) {
+  
+  .weatherLayout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+  
+  .weatherButtonsContainer {
+    gap: 2.5rem;
+    flex-direction: row;
+  }
+  
+  .weatherColumn {
+    gap: 1.5rem;
+  }
+  
+  .dialContainer {
+    flex: none;
+    order: 2;
+  }
+  
+  .weatherButton {
+    width: 6rem;
+    height: 6rem;
+    padding: 1.5rem;
+  }
+  
+  .weatherButtonIcon {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* Large desktop breakpoint - same as tablet, no changes */
+@media (min-width: 1440px) {
+
+  .weatherLayout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+  
+  .weatherButtonsContainer {
+    gap: 2.5rem;
+    flex-direction: row;
+  }
+  
+  .weatherColumn {
+    gap: 1.5rem;
+  }
+  
+  .dialContainer {
+    flex: none;
+    order: 2;
+  }
+  
+  .weatherButton {
+    width: 6rem;
+    height: 6rem;
+    padding: 1.5rem;
+  }
+  
+  .weatherButtonIcon {
+    width: 3rem;
+    height: 3rem;
+  }
+}

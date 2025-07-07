@@ -1,0 +1,22 @@
+<svg width="51" height="35" viewBox="0 0 51 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_3837_244" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="13" y="8" width="26" height="27">
+<circle cx="26" cy="21.9414" r="12" transform="rotate(180 26 21.9414)" stroke="#F5B041" stroke-width="2"/>
+</mask>
+<g mask="url(#mask0_3837_244)">
+<rect x="42" y="22.9414" width="29" height="15" transform="rotate(180 42 22.9414)" fill="#F5B041"/>
+<rect x="42" y="22.9414" width="29" height="15" transform="rotate(180 42 22.9414)" stroke="#F5B041"/>
+</g>
+<rect x="50.5" y="23.4414" width="50" height="1" rx="0.5" transform="rotate(180 50.5 23.4414)" fill="#DAC27F" stroke="#F5B041"/>
+<rect x="30.5" y="34.4414" width="9" height="1" rx="0.5" transform="rotate(180 30.5 34.4414)" fill="#DAC27F" stroke="#F5B041"/>
+<rect x="36.5" y="30.4414" width="7" height="1" rx="0.5" transform="rotate(180 36.5 30.4414)" fill="#DAC27F" stroke="#F5B041"/>
+<rect x="27.5" y="30.4414" width="12" height="1" rx="0.5" transform="rotate(180 27.5 30.4414)" fill="#DAC27F" stroke="#F5B041"/>
+<rect x="38.5" y="26.4414" width="18" height="1" rx="0.5" transform="rotate(180 38.5 26.4414)" fill="#DAC27F" stroke="#F5B041"/>
+<rect x="18.5" y="26.4414" width="5" height="1" rx="0.5" transform="rotate(180 18.5 26.4414)" fill="#DAC27F" stroke="#F5B041"/>
+<rect x="46.0963" y="14.3558" width="6.94258" height="1" rx="0.5" transform="rotate(155 46.0963 14.3558)" fill="#DAC27F" stroke="#F5B041"/>
+<rect x="41.7861" y="7.25781" width="6.94258" height="1" rx="0.5" transform="rotate(135 41.7861 7.25781)" fill="#DAC27F" stroke="#F5B041"/>
+<rect x="34.3591" y="2.7754" width="6.94258" height="1" rx="0.5" transform="rotate(110 34.3591 2.7754)" fill="#DAC27F" stroke="#F5B041"/>
+<rect x="26.5" y="0.5" width="6.94258" height="1" rx="0.5" transform="rotate(90 26.5 0.5)" fill="#DAC27F" stroke="#F5B041"/>
+<rect x="17.9844" y="2.43383" width="6.94258" height="1" rx="0.5" transform="rotate(70 17.9844 2.43383)" fill="#DAC27F" stroke="#F5B041"/>
+<rect x="10.6006" y="7.05867" width="6.94258" height="1" rx="0.5" transform="rotate(45 10.6006 7.05867)" fill="#DAC27F" stroke="#F5B041"/>
+<rect x="5.55044" y="13.5043" width="6.94258" height="1" rx="0.5" transform="rotate(25 5.55044 13.5043)" fill="#DAC27F" stroke="#F5B041"/>
+</svg>

@@ -1,0 +1,7 @@
+    .centerContainer {
+      display: flex;
+      justify-content: center; /* Centers horizontally */
+      align-items: center;    /* Centers vertically */
+      height: 100vh;          /* Example: Takes full viewport height for vertical centering */
+      width: 100vw;           /* Example: Takes full viewport width for horizontal centering */
+    }

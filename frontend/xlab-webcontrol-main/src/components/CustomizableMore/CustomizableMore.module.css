@@ -1,0 +1,241 @@
+.customizableMore {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sectionHeading {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.customizeToggle {
+  background: #007AFF;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.customizeToggle:hover {
+  background: #005BBB;
+}
+
+.customButtonGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.customButtonContainer {
+  position: relative;
+}
+
+.customButton {
+  width: 100%;
+  height: 80px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.customButton.hasAction {
+  background: #F5F5F5;
+  color: #333;
+  border: 2px solid #E0E0E0;
+}
+
+.customButton.hasAction:hover {
+  background: #EEEEEE;
+  border-color: #CCCCCC;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.customButton.empty {
+  background: #F8F8F8;
+  color: #999;
+  border: 2px dashed #CCCCCC;
+}
+
+.customButton.empty:hover {
+  background: #F0F0F0;
+  border-color: #999;
+}
+
+.buttonContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.buttonIcon {
+  font-size: 24px;
+}
+
+.buttonText {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.emptyContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plusIcon {
+  font-size: 32px;
+  color: #CCCCCC;
+}
+
+.removeButton {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #FF3B30;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+}
+
+.removeButton:hover {
+  background: #D70015;
+}
+
+.helpText {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Action Menu Styles */
+.actionMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.actionMenu {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 320px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.actionMenu h3 {
+  margin: 0 0 20px 0;
+  text-align: center;
+  color: #333;
+}
+
+.actionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.actionOption {
+  background: #F8F8F8;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 16px 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.actionOption:hover {
+  background: #F0F0F0;
+  border-color: #CCCCCC;
+  transform: translateY(-1px);
+}
+
+.actionIcon {
+  font-size: 20px;
+}
+
+.actionName {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+.cancelButton {
+  width: 100%;
+  background: #8E8E93;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cancelButton:hover {
+  background: #6D6D70;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .customButtonGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .actionGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .actionMenu {
+    width: 95%;
+    padding: 20px;
+  }
+}
