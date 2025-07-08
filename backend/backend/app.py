@@ -7,11 +7,19 @@ import requests
 app = Flask(__name__)
 CORS(app)
 
+# --------------- Manual HTTP Requests (old method) ------------------------
+
 UE_PROPS_BASE_URL = 'http://localhost:30010/remote/preset/MyRemote/property/Time of Day'
+
+def WeatherGetRequest(name, value):
+    return { "propertyValue": value,
+            "generateTransaction": True }  
+
+# -----------------------------------------------------------------------------
 
 print(upyrc.__file__)
 
-#import logging
+#import logging -- Logging levels: FATAL, ERROR, WARN, INFO, DEBUG, TRACE
 upyrc.set_log_level(logging.DEBUG)
 print("Version:", upyrc.get_version())
 
@@ -20,23 +28,26 @@ conn = upyrc.URConnection()
 print("Ping: ", conn.ping())
 # >>> Ping: 127.0.0.1:30010
 
-# Get all presets basic infos ( Name, ID and path )
-all_presets = conn.get_all_presets()
-print("Presets: ", all_presets)
-
 # Get an preset object, by name.
 preset_name = "MyRemote"
 preset = conn.get_preset(preset_name)
-print("Preset: ", preset)
 
-print(preset.get_all_property_names())
+@app.route('/api/get_all_presets', methods=['GET', 'POST'])
+def get_all_presets():
+    # Get all presets basic infos ( Name, ID and path )
+    all_presets = conn.get_all_presets()
+    print("Presets: ", all_presets)
+    return all_presets
 
-def WeatherGetRequest(name, value):
-    return { "propertyValue": value,
-            "generateTransaction": True }  
+
+@app.route('/api/get_all_presets_data', methods=['GET', 'POST'])
+def get_all_presets_data():
+    # Get all presets basic infos ( Name, ID and path )
+    all_preset_data = preset.get_all_property_names()
+    print("All preset vars: ", all_preset_data)
+    return all_preset_data
 
 last_val = 0
-session = requests.Session()
 
 @app.route('/api/update-time', methods=['POST'])
 def update_value():
@@ -60,8 +71,6 @@ def update_value():
     else:
         last_val = value
 
-
-    
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
