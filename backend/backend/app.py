@@ -50,11 +50,11 @@ def update_value():
     if value != last_val:
         # Get a preset exposed property:
         preset_property = preset.get_property("Time Of Day")
-        print("Previous Time to: ", preset_property.eval())
+        print("Previous Time of Day: ", preset_property.eval())
 
         # set new value using that exposed prop
         preset_property.set(Time_of_Day=value)
-        print("New Fog Value: ", preset_property.eval())
+        print("New Time of Day: ", preset_property.eval())
         
         return jsonify({"status": "success", "received": value})
     else:
