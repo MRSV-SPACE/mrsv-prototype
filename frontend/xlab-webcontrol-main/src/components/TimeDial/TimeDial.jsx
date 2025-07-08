@@ -1,4 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect, useMemo } from 'react';
+import { throttle } from 'lodash';
 import PropTypes from 'prop-types';
 import styles from './TimeDial.module.css';
 import Night from './icons/Night.svg';
@@ -89,6 +90,46 @@ const TimeDial = ({ initialTime = { hours: 6, minutes: 45 }, onTimeChange }) => 
     }
   }, [isNearMinuteHand, getAngleFromCenter, angleToTime, onTimeChange]);
 
+// Define throttled fetch function
+const throttledUpdateTime = useMemo(() => throttle((newTime) => {
+  fetch('http://localhost:5000/api/update-time', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newTime),
+  }).then(res => {
+    if (!res.ok) {
+      console.error("Failed to update time:", res.statusText);
+    }
+  }).catch(err => {
+    console.error("Network error when updating time:", err);
+  });
+}, 1000), []);  // throttles to once per 1000ms
+
+// Define throttled fetch function
+const throttledUpdateTimeDirect = useMemo(() => throttle((newTime) => {
+  fetch('http://localhost:30010/remote/preset/MyRemote/property/Time of Day', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+    propertyValue: newTime.hours,
+    generateTransaction: true
+  }),
+
+  }).then(res => {
+    if (!res.ok) {
+      console.error("Failed to update time:", res.statusText);
+    }
+  }).catch(err => {
+    console.error("Network error when updating time:", err);
+  });
+}, 500), []);  // throttles to once per 1000ms
+
+
+
   const handleMove = useCallback((clientX, clientY) => {
     if (!isDragging) return;
     
@@ -98,6 +139,7 @@ const TimeDial = ({ initialTime = { hours: 6, minutes: 45 }, onTimeChange }) => 
     if (newTime.hours !== time.hours || newTime.minutes !== time.minutes) {
       setTime(newTime);
       onTimeChange?.(newTime);
+      throttledUpdateTime(newTime);
     }
   }, [isDragging, time, getAngleFromCenter, angleToTime, onTimeChange]);
 
