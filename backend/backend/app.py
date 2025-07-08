@@ -1,20 +1,22 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from upyrc import upyrc
 import logging
-import requests
+import sys
+
+# ---------------- Import Wrapper via local storage ---------------
+sys.path.insert(0, r"UnrealRemoteControlWrapper\UnrealRemoteControlWrapper-main\src")
+from upyrc import upyrc
+# -----------------------------------------------------------------
 
 app = Flask(__name__)
 CORS(app)
 
 # --------------- Manual HTTP Requests (old method) ------------------------
+#UE_PROPS_BASE_URL = 'http://localhost:30010/remote/preset/MyRemote/property/Time of Day'
 
-UE_PROPS_BASE_URL = 'http://localhost:30010/remote/preset/MyRemote/property/Time of Day'
-
-def WeatherGetRequest(name, value):
-    return { "propertyValue": value,
-            "generateTransaction": True }  
-
+#def WeatherGetRequest(name, value):
+#    return { "propertyValue": value,
+#            "generateTransaction": True }  
 # -----------------------------------------------------------------------------
 
 print(upyrc.__file__)
@@ -64,7 +66,7 @@ def update_value():
         print("Previous Time of Day: ", preset_property.eval())
 
         # set new value using that exposed prop
-        preset_property.set(Time_of_Day=value)
+        preset_property.set(**{"Time_of_Day": value}) # still creates this  {'PropertyValue': {'Time_of_Day': 930.0}}
         print("New Time of Day: ", preset_property.eval())
         
         return jsonify({"status": "success", "received": value})
