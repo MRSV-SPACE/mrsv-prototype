@@ -105,7 +105,7 @@ const throttledUpdateTime = useMemo(() => throttle((newTime) => {
   }).catch(err => {
     console.error("Network error when updating time:", err);
   });
-}, 500), []);  // throttles to once per 500ms
+}, 300), []);  // throttles to once per 500ms
 
 // Define throttled fetch function
 const throttledUpdateTimeDirect = useMemo(() => throttle((newTime) => {

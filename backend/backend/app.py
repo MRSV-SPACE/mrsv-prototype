@@ -4,7 +4,7 @@ import logging
 import sys
 
 # ---------------- Import Wrapper via local storage ---------------
-sys.path.insert(0, r"UnrealRemoteControlWrapper\UnrealRemoteControlWrapper-main\src")
+sys.path.insert(0, r"backend\backend\UnrealRemoteControlWrapper\UnrealRemoteControlWrapper-main\src")
 from upyrc import upyrc
 # -----------------------------------------------------------------
 
