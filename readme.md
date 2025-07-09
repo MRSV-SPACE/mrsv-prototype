@@ -15,3 +15,9 @@ TODO:
 - view
 - favorites
 
+Valid JSON payloads:
+When an exposed property has only one variable:
+{  "propertyValue": 2000, "generateTransaction": true }
+
+When there are >1 payloads: 
+{ "PropertyValue": {"X": 1, "Y": 1.5}, "generateTransaction": true }
