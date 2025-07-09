@@ -1,7 +1,7 @@
 To run the program use:
 
 Frontend: npm start
-Backend: python app.py
+Backend: python backend\backend\app.py  
 UE: Start a world with webserver running on port 30010
 
 
@@ -19,5 +19,5 @@ Valid JSON payloads:
 When an exposed property has only one variable:
 {  "propertyValue": 2000, "generateTransaction": true }
 
-When there are >1 payloads: 
+When there are >1 variables in a payloads: 
 { "PropertyValue": {"X": 1, "Y": 1.5}, "generateTransaction": true }
