@@ -26,7 +26,7 @@ upyrc.set_log_level(logging.DEBUG)
 print("Version:", upyrc.get_version())
 
 # Create a connection to Unreal
-conn = upyrc.URConnection()
+conn = upyrc.URConnection(host='192.168.0.20')
 print("Ping: ", conn.ping())
 # >>> Ping: 127.0.0.1:30010
 
