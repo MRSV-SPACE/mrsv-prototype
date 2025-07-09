@@ -66,7 +66,7 @@ def update_value():
         print("Previous Time of Day: ", preset_property.eval())
 
         # set new value using that exposed prop
-        preset_property.set(**{"Time_of_Day": value}) # still creates this  {'PropertyValue': {'Time_of_Day': 930.0}}
+        preset_property.single_set(value) # not sure if this will work
         print("New Time of Day: ", preset_property.eval())
         
         return jsonify({"status": "success", "received": value})

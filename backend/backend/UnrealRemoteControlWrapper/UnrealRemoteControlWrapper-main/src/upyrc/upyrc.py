@@ -692,9 +692,18 @@ class _URemotePresetProperty:
         return None
 
     def set(self, **kwargs):
-        ''' Set the property value.
+        ''' Set the property value for multiple variables.
         '''
         assert kwargs != {}, "Invalid parameters"
+        route_infos = ROUTE_PRESET_SET_PROPERTY.copy()
+        route_infos["route"] = route_infos["route"].replace("${PRESET_NAME}", self.preset_name)\
+                                                   .replace("${PROPERTY_NAME}", self.display_name)
+        body = {"PropertyValue": kwargs}
+        result = self.connection.run_request(route_infos=route_infos, json=body)
+
+    def single_set(self, kwargs):
+        ''' Set the property value for one variable.
+        '''
         route_infos = ROUTE_PRESET_SET_PROPERTY.copy()
         route_infos["route"] = route_infos["route"].replace("${PRESET_NAME}", self.preset_name)\
                                                    .replace("${PROPERTY_NAME}", self.display_name)
