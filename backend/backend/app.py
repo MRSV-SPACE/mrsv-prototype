@@ -25,8 +25,8 @@ print(upyrc.__file__)
 upyrc.set_log_level(logging.DEBUG)
 print("Version:", upyrc.get_version())
 
-# Create a connection to Unreal
-conn = upyrc.URConnection(host='192.168.0.20')
+# Create a connection to Unreal --> host='192.168.0.20' if connecting to rig
+conn = upyrc.URConnection()
 print("Ping: ", conn.ping())
 # >>> Ping: 127.0.0.1:30010
 
@@ -54,7 +54,6 @@ last_val = 0
 @app.route('/api/update-time', methods=['POST'])
 def update_value():
     global last_val
-    global session
 
     data = request.get_json()
     value = float(data.get('hours') * 100 + data.get('minutes'))
@@ -72,6 +71,28 @@ def update_value():
         return jsonify({"status": "success", "received": value})
     else:
         last_val = value
+
+
+@app.route('/api/move-camera', methods=['POST'])
+def move_camera():
+    data = request.get_json()
+    print("Moving Camera: ", data)
+    #preset_property = preset.get_property("Camera Direction")
+    #preset_property.set(left=data.get('left'), right=data.get('right'), up=data.get('up'), down=data.get('down'), speed=data.get('speed'))
+    return jsonify({"status": "success", "received": data})
+
+
+def format_camera_json(left, right, up, down):
+    return {
+	"PropertyValue": {
+		"left_24_5BF42979487CDCBA06A3128D28A3371F": left,
+		"down_31_51B309DD4649DFEE711A69A401E89113": down,
+		"right_25_49D8AE81486F02C938E04D9B954B4417": right,
+		"up_27_2E7037734304D6E5EA388BA424D43419": up,
+		"speed_32_57CF765E4033B21BD6E484A6CFC8879F": 45
+	},
+	"GenerateTransaction": True
+}
 
 
 if __name__ == '__main__':

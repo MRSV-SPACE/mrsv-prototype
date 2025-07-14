@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import './View.css';
 
 const CameraController = ({ onCameraMove }) => {
@@ -8,12 +8,31 @@ const CameraController = ({ onCameraMove }) => {
     setActiveDirection(direction);
     if (onCameraMove) {
       onCameraMove(direction);
+      moveCamera(direction);
     }
   };
 
   const handleDirectionRelease = () => {
     setActiveDirection(null);
+    moveCamera('stop');
   };
+
+const moveCamera = useCallback((direction) => {
+  fetch('http://localhost:5000/api/move-camera', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(direction),
+  }).then(res => {
+    if (!res.ok) {
+      console.error("Failed to move camera:", res.statusText);
+    }
+  }).catch(err => {
+    console.error("Network error when updating camera:", err);
+  });
+}, []);
+
 
   return (
     <div className="camera-controller">
